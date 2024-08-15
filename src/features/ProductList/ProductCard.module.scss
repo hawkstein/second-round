@@ -1,0 +1,23 @@
+.card {
+  padding: 24px 16px;
+  margin-bottom: 24px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  outline: 3px solid #535bf2;
+
+  > h2 {
+    margin-bottom: 8px;
+  }
+
+  > dl {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+
+    dt {
+      font-weight: bold;
+    }
+  }
+}
