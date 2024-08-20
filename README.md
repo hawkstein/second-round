@@ -19,3 +19,5 @@ Rather than require a BE server, all API requests are intercepted by MSW and the
 ## Description
 
 This is a simple app without authentication that displays a users mortgage status and a list of mortgage products they have available. It represents a typical feature within an app we whitelabel for a mortgage lender.
+
+`tickets/` contains the description for your task in this test.
