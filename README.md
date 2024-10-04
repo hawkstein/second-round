@@ -10,11 +10,11 @@ As well as the typical project generated from the template, several packages hav
 - Redux Toolkit (for RTK Query). Utility types and files added from project templates.
 - Vitest
 - Prettier
-- Sass. Module per component is used for the majority of our styling.
+- Sass. Module per component is used for the majority of our styling. There's some root styling/reset in `index.css` and button styles have been `unset`
 
 ## Mock Service Worker
 
-Rather than require a BE server, all API requests are intercepted by MSW and the same handlers are used in the tests.
+Rather than require a BE server, all API requests are intercepted by MSW and the same handlers are used in the tests. See `/mocks/handlers.ts` if interested.
 
 ## Description
 
