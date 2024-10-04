@@ -3,13 +3,16 @@ import { ProductCard } from './ProductCard';
 
 export function ProductList() {
   const { data, error, isLoading } = useGetProductsQuery();
-  return (
-    <>
-      {error ? <p>An error occurred</p> : null}
-      {isLoading ? <p>Loading...</p> : null}
-      {data?.products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </>
-  );
+
+  if (error) {
+    return <p>An error occurred</p>;
+  }
+
+  if (isLoading) {
+    <p>Loading...</p>;
+  }
+
+  return data?.products.map((product) => (
+    <ProductCard key={product.id} product={product} />
+  ));
 }
