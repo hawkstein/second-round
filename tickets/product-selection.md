@@ -6,7 +6,6 @@ Currently the app lists available mortgage products that a user can consider swi
 
 - We want a user to be able to select one or multiple products and submit those to their lender.
 - Selecting/deselecting a product should be sent to the API to track user behaviour.
-- There should be a confirmation page that lists the selected products before final submission.
 
 ## Notes
 
@@ -15,12 +14,13 @@ Currently the app lists available mortgage products that a user can consider swi
 
 ## Within the time allocated
 
-- Please design the changes to the REST API around these requirements.
-- To discuss that design: list the endpoints and payload/response in comments or update RTKQ in `api.ts` if you know how.
+- Please consider the changes to the REST API around these requirements.
+- To discuss the API design: list the endpoints and payload/response in comments or update RTKQ in `api.ts` if you are familiar with Redux Toolkit.
 - Update or add new components to allow selection. Please review `selected-design.png`.
 
   ![Selectable Product Design](./selected-design.png 'Selected State')
 
 ## Optional
 
-- Connect the app to the API you've designed. Using mocked responses or similar faking is fine.
+- Connect the app to the API you've designed. Using mocked responses is fine.
+- AND/OR Add a confirmation page that lists the selected products before final submission.
