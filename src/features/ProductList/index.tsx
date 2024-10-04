@@ -12,6 +12,10 @@ export function ProductList() {
     return <p>Loading...</p>;
   }
 
+  if (data?.products.length === 0) {
+    return <p>There are no products to view.</p>;
+  }
+
   return data?.products.map((product) => (
     <ProductCard key={product.id} product={product} />
   ));

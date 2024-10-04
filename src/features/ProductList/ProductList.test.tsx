@@ -26,11 +26,31 @@ describe('ProductList', () => {
     await waitForElementToBeRemoved(screen.getByText('Loading...'));
   });
 
+  it('renders an empty state', async () => {
+    server.use(
+      http.get('http://localhost:5173/v1/products/', async () => {
+        await delay();
+        return HttpResponse.json({
+          products: [],
+        });
+      }),
+    );
+    renderWithProviders(<ProductList />);
+    expect(
+      await screen.findByText('There are no products to view.'),
+    ).toBeInTheDocument();
+    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { name: '5 year fixed' }),
+    ).not.toBeInTheDocument();
+  });
+
   it('renders a list of products', async () => {
     renderWithProviders(<ProductList />);
     expect(
       await screen.findByRole('heading', { name: '2 year fixed' }),
     ).toBeInTheDocument();
+    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: '5 year fixed' }),
     ).toBeInTheDocument();
@@ -54,5 +74,6 @@ describe('ProductList', () => {
     );
     renderWithProviders(<ProductList />);
     expect(await screen.findByText('An error occurred')).toBeInTheDocument();
+    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
   });
 });
