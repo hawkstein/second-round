@@ -9,7 +9,7 @@ export function ProductList() {
   }
 
   if (isLoading) {
-    <p>Loading...</p>;
+    return <p>Loading...</p>;
   }
 
   return data?.products.map((product) => (
